@@ -1,3 +1,40 @@
-* {
-    color: red !important;
+input {
+  outline: none;
+  border: 1px solid #ccc;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  &:focus{
+      border: 2px solid #4895ef;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 23px;
+  }
+}
+
+.form-group {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+  .icon {
+    padding: 10px;
+    background: dodgerblue;
+    color: white;
+    min-width: 50px;
+    text-align: center;
+  }
+}
+
+.reset-app {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.align-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
