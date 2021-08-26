@@ -1,9 +1,9 @@
 import './primaryTheme.scss'
-import { ReactChild } from "react"
+import { ReactChild, FC } from "react"
 
 export interface PrimaryThemeProps {
     className?: string | undefined
-    children?: ReactChild | undefined
+    children?: ReactChild | Element[] | JSX.Element[] | undefined 
 }
-const PrimaryTheme = ({children = undefined, className = undefined}: PrimaryThemeProps) => <div className={`${className} container-theme`}> {children} </div>
+const PrimaryTheme: FC<PrimaryThemeProps> = ({children = undefined, className = undefined}: PrimaryThemeProps) => <div className={`${className} primary-container-theme`}> {children} </div>
 export default PrimaryTheme

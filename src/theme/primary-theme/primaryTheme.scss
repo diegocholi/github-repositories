@@ -4,26 +4,27 @@ $profileUserBackgroundColor: rgb(41, 41, 41);
 $colorDark: #000;
 $colorWhite: #c9d1d9;
 
-header {
-    background-color: $headerBackgroundColor;
-}
-
-.container-theme {
+.primary-container-theme {
     background-color: $backgroundColor;
     width: 100vw;
     height: 100vh;
-}
 
-.profile-user {
-    background-color: $profileUserBackgroundColor;
-    color: $colorWhite;
-}
+    header {
+        background-color: $headerBackgroundColor;
+    }
 
-.repository-list{
-    color: $colorWhite;
-    background-color: $backgroundColor;
-}
+    .profile-user {
+        background-color: $profileUserBackgroundColor;
+        color: $colorWhite;
+    }
 
-#icon-logo-github {
-    color: $colorDark;
+    .repository-list{
+        color: $colorWhite;
+        background-color: $backgroundColor;
+    }
+
+    #icon-logo-github {
+        color: $colorWhite;
+    }
+
 }
