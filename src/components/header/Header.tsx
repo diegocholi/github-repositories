@@ -9,7 +9,7 @@ export interface HeaderProps {
 const Header = () => {
     return <header>
         <div className='header-logo'>
-            <FaGithubSquare className='icon-logo-github' size='45px' />
+            <FaGithubSquare className='icon-logo-github' size='65px' />
         </div>
         <div className='header-search'>
             <Search />

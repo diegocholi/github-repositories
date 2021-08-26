@@ -1,6 +1,6 @@
 $backgroundColor: #f1faee;
 $headerBackgroundColor: #000;
-$profileUserBackgroundColor: #f1faee;
+$profileUserBackgroundColor: #8b8b8b;
 $colorDark: #000;
 $colorWhite: #fff;
 
@@ -20,7 +20,7 @@ header {
 }
 
 .repository-list{
-    color: $colorWhite;
+    color: $colorDark;
     background-color: $backgroundColor;
 }
 

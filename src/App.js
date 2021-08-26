@@ -2,7 +2,7 @@ import './App.scss'
 import { useState } from 'react'
 import { PrimaryTheme, SecondaryTheme } from './theme'
 import { SearchRepositoriesByUsers } from './views'
-import { Header  } from './components'
+import { Header } from './components'
 
 const App = () => {
     const [theme, setTheme] = useState({ Theme: PrimaryTheme })
@@ -10,6 +10,7 @@ const App = () => {
       setTheme({ Theme: SecondaryTheme })
       console.log('Ola Mundo!')
     }
+
     return (
       <theme.Theme className='reset-app'>
         <Header />
