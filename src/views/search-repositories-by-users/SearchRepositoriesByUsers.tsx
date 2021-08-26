@@ -4,6 +4,54 @@ export interface SearchRepositoriesByUsersProps {
 }
  
 const SearchRepositoriesByUsers = (props: SearchRepositoriesByUsersProps) => {
+    const dataCards = [{
+        title: 'BICorrentistas',
+        branch: 'main',
+        date: '10-10-2019',
+        language: 'TSQL'
+    },
+    {
+        title: 'BICorrentistas',
+        branch: 'main',
+        date: '10-10-2019',
+        language: 'TSQL'
+    },
+    {
+        title: 'BICorrentistas',
+        branch: 'main',
+        date: '10-10-2019',
+        language: 'TSQL'
+    },
+    {
+        title: 'BICorrentistas',
+        branch: 'main',
+        date: '10-10-2019',
+        language: 'TSQL'
+    },
+    {
+        title: 'BICorrentistas',
+        branch: 'main',
+        date: '10-10-2019',
+        language: 'TSQL'
+    },
+    {
+        title: 'BICorrentistas',
+        branch: 'main',
+        date: '10-10-2019',
+        language: 'TSQL'
+    },
+    {
+        title: 'BICorrentistas',
+        branch: 'main',
+        date: '10-10-2019',
+        language: 'TSQL'
+    },
+    {
+        title: 'BICorrentistas',
+        branch: 'main',
+        date: '10-10-2019',
+        language: 'TSQL'
+    }]
     return (
         <div className='container-search-repositories-by-users'>
             <div className='profile-user'>
@@ -17,7 +65,26 @@ const SearchRepositoriesByUsers = (props: SearchRepositoriesByUsersProps) => {
                 </a>
             </div>
             <div className='repository-list'>
-                content
+                <div className='container' >
+                    <div className='col-4'>
+                        {dataCards.map(item => (
+                            <div className='card-repository'>
+                                <div className='card-repository-title'>
+                                    {item.title}
+                                </div>
+                                <div className='card-repository-date'>
+                                    {item.date}
+                                </div>
+                                <div className='card-repository-branch'>
+                                    {item.branch}
+                                </div>
+                                <div className='card-repository-language'>
+                                    {item.language}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
         </div>
     )

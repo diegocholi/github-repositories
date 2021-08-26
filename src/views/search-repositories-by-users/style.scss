@@ -1,8 +1,8 @@
 .container-search-repositories-by-users{
     display: grid;
-    
-    grid-template-columns: 15% 85%;
+    grid-template-columns: 25% 75%;
     .profile-user{
+        height: 100%;
         .avatar-user-content{
             display: flex;
             justify-content: center;
@@ -12,28 +12,57 @@
                 margin-top: 20px;
             }
         }
-        
         .user-login{
             display: flex;
             justify-content: center;
             margin-top: 3px;
             margin-bottom: 10px;
         }
-        .git-hub-profile-button{
+        .git-hub-profile-button {
             display: flex;
             justify-content: center;
+            align-items: center;
             text-decoration: none;
             background-color: #238636;
             color: #fff;
             margin-bottom: 20px;
             padding: 10px 20px;
+            margin: 5px;
+            @media screen and (max-width: 414px) {
+                padding: 1px 1px;
+            }
         }
     }
     .repository-list{
-        
+        .card-repository{
+            background-color: #292929;
+            margin: 10px 10px;
+            padding: 30px 15px;
+            height: 70px;
+            .card-repository-title{
+                font-weight: 700;
+                padding: 0 8px;
+            }
+            .card-repository-date {
+                font-size: 10px;
+                float: right;
+            }
+            .card-repository-branch {
+                font-size: 12px;
+                padding: 10px 12px;
+            }
+            .card-repository-language{
+                float: right;
+                background-color: #CEE7E6;
+                color: #000;
+                padding: 2px 2px;
+                font-weight: 600;
+                border-radius: 5px;
+            }
+        }
     }
     @media screen and (max-width: 768px) {
-        grid-template-columns: 20% 80%;
+        grid-template-columns: 30% 70%;
     }
     @media screen and (max-width: 540px) {
         grid-template-columns: 30% 70%;

@@ -42,3 +42,19 @@ input {
 .default-padding {
   padding: 20px 20px;
 }
+
+.container {
+  width: auto;
+  height: auto;
+  grid-template-columns: 100%;
+  .col-4 {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 50% 50%;
+    }
+    @media screen and (max-width: 414px) {
+      grid-template-columns: 100%;
+    }
+  }
+}
