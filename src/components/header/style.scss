@@ -1,15 +1,21 @@
 header {
-    padding: 20px 20px;
+    padding: 5px 10px;
     display: grid;
     grid-template-columns: 5% 90% 5%;
     @media screen and (max-width: 1024px) {
-        grid-template-columns: 10% 85% 5%;
+        grid-template-columns: 10% 80% 10%;
     }
     @media screen and (max-width: 768px) {
-        grid-template-columns: 15% 80% 5%;
+        grid-template-columns: 15% 75% 10%;
+    }
+    @media screen and (max-width: 540px) {
+        grid-template-columns: 15% 70% 15%;
+    }
+    @media screen and (max-width: 414px) {
+        grid-template-columns: 15% 65% 20%;
     }
     @media screen and (max-width: 280px) {
-        grid-template-columns: 20% 75% 5%;
+        grid-template-columns: 15% 65% 20%;
     }
     
     .header-logo {
@@ -19,6 +25,7 @@ header {
 
     .header-search{
         display: grid;
+        margin-top: 11px;
         grid-template-columns: 50%;
         justify-content: center;
         align-content: center;
@@ -29,9 +36,8 @@ header {
     }
 
     .handle-theme-btn-content{
-        display: grid;
-        grid-template-columns: 50%;
-        justify-content: center;
-        align-content: center;
+        display: flex;
+        justify-self: center;
+        align-items: center;
     }
 }

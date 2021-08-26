@@ -7,17 +7,18 @@ export interface HeaderProps {
     checked: boolean
 }
  
-const Header: React.FC<HeaderProps> = ({handleTheme, checked}) => 
+const Header: React.FC<HeaderProps> = ({handleTheme, checked}) => (
      <header>
         <div className='header-logo'>
             <FaGithubSquare className='icon-logo-github' size='65px' />
         </div>
         <div className='header-search'>
-            <Search placeholder='Buscar repositórios por usuários' />
+            <Search placeholder='Buscar' />
         </div>
         <div className='handle-theme-btn-content'>
            <Switch onClick={handleTheme} checked={checked} />
         </div>
     </header> 
+)
 
 export default Header
