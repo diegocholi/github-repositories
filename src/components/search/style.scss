@@ -1,14 +1,11 @@
 .search-container {
-    padding: 20px 20px;
     .input-search {
         padding-right: 15px;
-        padding-left: 45px;
         height: 40px;
-        width: 40%;
         border-radius: 20px;
         @media screen and (max-width: 768px) {
-            height: 50px;
-            width: 80%;
+            font-size: 14px;
+            height: 30px;
         }
     }
 }

@@ -1,0 +1,47 @@
+.container-search-repositories-by-users{
+    display: grid;
+    
+    grid-template-columns: 15% 85%;
+    .profile-user{
+        .avatar-user-content{
+            display: flex;
+            justify-content: center;
+            .avatar-user{
+                border-radius: 100%;
+                width: 100px;
+                margin-top: 20px;
+            }
+        }
+        
+        .user-login{
+            display: flex;
+            justify-content: center;
+            margin-top: 3px;
+            margin-bottom: 10px;
+        }
+        .git-hub-profile-button{
+            display: flex;
+            justify-content: center;
+            text-decoration: none;
+            background-color: #238636;
+            color: #fff;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+        }
+    }
+    .repository-list{
+        
+    }
+    @media screen and (max-width: 768px) {
+        grid-template-columns: 20% 80%;
+    }
+    @media screen and (max-width: 540px) {
+        grid-template-columns: 30% 70%;
+    }
+    @media screen and (max-width: 414px) {
+        grid-template-columns: 35% 65%;
+    }
+    @media screen and (max-width: 280px) {
+        grid-template-columns: 40% 60%;
+    }
+}

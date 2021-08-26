@@ -1,8 +1,8 @@
-$backgroundColor: #000;
-$headerBackgroundColor: rgba(#fff, 0.9);
-$profileUserBackgroundColor: rgb(41, 41, 41);
+$backgroundColor: #f1faee;
+$headerBackgroundColor: #000;
+$profileUserBackgroundColor: #f1faee;
 $colorDark: #000;
-$colorWhite: #c9d1d9;
+$colorWhite: #fff;
 
 header {
     background-color: $headerBackgroundColor;
@@ -24,6 +24,6 @@ header {
     background-color: $backgroundColor;
 }
 
-#icon-logo-github {
-    color: $colorDark;
+.icon-logo-github {
+    color: $colorWhite;
 }

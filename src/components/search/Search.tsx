@@ -7,7 +7,7 @@ const Search = (props: SearchProps) => {
     return (
         <div className='search-container'>
             <form>
-                <div className='form-group align-center'>
+                <div className='form-group'>
                     <FaSearch className='icon' />
                     <input type='search' className='input-search' name='search' id='search' />
                 </div>
