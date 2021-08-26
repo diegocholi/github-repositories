@@ -2,8 +2,8 @@ import './secondaryTheme.scss'
 import { ReactChild } from "react"
 
 export interface SecondaryThemeProps {
-    className: string
-    children: ReactChild
+    className?: string | undefined
+    children?: ReactChild | undefined
 }
-const SecondaryTheme = ({children, className = ''}: SecondaryThemeProps) => <div className={`${className} container-theme`}> {children} </div>
+const SecondaryTheme = ({children = undefined, className = undefined}: SecondaryThemeProps) => <div className={`${className} container-theme`}> {children} </div>
 export default SecondaryTheme
