@@ -73,8 +73,6 @@ const useRequest = (requestOptions: IRequestOptions) => {
 
   const buildFetch = () => {
     setStatus(true)
-    if(!pushValues)
-      clearData()
     axios({
       method: method as Method,
       url: buildQueryParams(),
@@ -88,7 +86,7 @@ const useRequest = (requestOptions: IRequestOptions) => {
             setData([...data, ...dataResponse])
           else if(!pushValues)
             setData(dataResponse)
-        } else setData([])
+        }
 
         setStatus(false)
         // if (successMessage) appContext.alertMensage(successMessage)

@@ -14,9 +14,8 @@ const SearchRepositoriesByUsers = () => {
     const requestParams: IRequestOptions = {
         method: 'GET',
         url: `${appContext.search.searchValue}/repos`,
-        pushValues: true,
         queryParams: {
-            per_page: 24,
+            per_page: 12,
             page: page
         }
     }
@@ -27,14 +26,14 @@ const SearchRepositoriesByUsers = () => {
     }, [data])
 
     useEffect(() => {
-        if(appContext.search.searchValue || page > 1)
+        if(appContext.search.searchValue)
             fetch()
     }, [appContext.search.searchValue, page, fetch])
 
     window.onscroll = () => {
         console.log(window.scrollY, window.innerHeight, document.body.offsetHeight)
-        if (window.scrollY >= document.body.offsetHeight - 200) {
-            // setPage(page + 1)
+        if (window.scrollY >= document.body.offsetHeight) {
+            console.log('end-page')
         }
     }
 
@@ -47,6 +46,11 @@ const SearchRepositoriesByUsers = () => {
                 userGit={data.length > 0 ? data[0].owner.login : ''}
                 urlGit={data.length > 0 ? data[0].owner.html_url : ''} />
             <RepositoryList data={data} />
+            <div></div>
+            <div>
+                <button onClick={() => setPage(page - 1)}> {'<<'} </button>
+                <button onClick={() => setPage(page + 1)}> {'>>'} </button>
+            </div>
             {status ? <>carregando...</> : ''}
         </div>
     )
