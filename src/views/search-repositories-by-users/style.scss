@@ -34,18 +34,29 @@
         }
     }
     .repository-list{
-        .card-repository{
+        padding: 10px 0px;
+        .card-repository {
+            cursor: pointer;
             background-color: #292929;
             margin: 10px 10px;
-            padding: 30px 15px;
+            padding-top: 20px;
+            padding-bottom: 50px;
             height: 70px;
+            
+            &:hover {
+                background-color: #3b3b3b;
+            }
+            
             .card-repository-title{
                 font-weight: 700;
                 padding: 0 8px;
+                font-size: 14px;
+                margin-bottom: 10px;
             }
             .card-repository-date {
                 font-size: 10px;
                 float: right;
+                margin-right: 10px;
             }
             .card-repository-branch {
                 font-size: 12px;
@@ -58,6 +69,7 @@
                 padding: 2px 2px;
                 font-weight: 600;
                 border-radius: 5px;
+                margin-right: 10px;
             }
         }
     }

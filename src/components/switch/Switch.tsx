@@ -1,13 +1,16 @@
 import './style.scss'
+import InputContext from './components/InputContext'
+import InputWithProps from './components/InputProps'
 
 export interface SwitchProps {
     onClick?: () => void
-    checked?: boolean
+    checked?: boolean | undefined
+    themeSwich?: boolean | undefined
 }
- 
-const Switch: React.FC<SwitchProps> = ({onClick = () => {}, checked = false}) => ( 
+
+const Switch: React.FC<SwitchProps> = ({onClick = undefined, checked = undefined, themeSwich = false}) => ( 
     <label className="switch">
-        <input type="checkbox" onChange={onClick}  checked={checked} />
+        {themeSwich ? <InputContext /> : <InputWithProps onChange={onClick} checked={checked} />}
         <div>
             <span></span>
         </div>

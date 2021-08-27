@@ -1,7 +1,7 @@
 import axios, { Method } from 'axios'
 import { useCallback, useRef, useState } from 'react'
 // import { useAppContext } from '../contexts'
-const API_BASE_URL = 'https://api.github.com/users/{userName}/repos?per_page=50'
+const API_BASE_URL = 'https://api.github.com/users/'
 
 export interface IEventsRequest {
   onComplete?: () => void
@@ -17,6 +17,7 @@ export interface IRequestOptions {
   // errorMessage?: string
   // successMessage?: string
   events?: IEventsRequest
+  pushValues?: boolean
 }
 
 const useRequest = (requestOptions: IRequestOptions) => {
@@ -29,11 +30,12 @@ const useRequest = (requestOptions: IRequestOptions) => {
     // errorMessage = undefined,
     // successMessage = undefined,
     events = undefined,
+    pushValues = false
   } = requestOptions
   // const appContext = useAppContext()
   const [data, setData] = useState<any>([])
   const [status, setStatus] = useState<boolean>(false)
-  const [totalPages, setTotalPages] = useState<number>(0)
+  // const [totalPages, setTotalPages] = useState<number>(0)
 
   const jwtToken = localStorage.getItem('userToken')
     ? String(localStorage.getItem('userToken'))
@@ -44,29 +46,11 @@ const useRequest = (requestOptions: IRequestOptions) => {
     if (queryParams) {
       urlBuild = urlBuild.concat('?')
       for (let key in queryParams) {
-        switch (key) {
-          case 'page':
-            urlBuild = urlBuild
-              .concat('page_number')
-              .concat('=')
-              .concat(queryParams[key] + 1)
-              .concat('&')
-            break
-          case 'pageSize':
-            urlBuild = urlBuild
-              .concat('page_size')
-              .concat('=')
-              .concat(queryParams[key])
-              .concat('&')
-            break
-          default:
-            urlBuild = urlBuild
+        urlBuild = urlBuild
               .concat(key)
               .concat('=')
               .concat(queryParams[key])
               .concat('&')
-            break
-        }
       }
       urlBuild = urlBuild.substring(0, urlBuild.length - 1)
     }
@@ -89,7 +73,8 @@ const useRequest = (requestOptions: IRequestOptions) => {
 
   const buildFetch = () => {
     setStatus(true)
-    clearData()
+    if(!pushValues)
+      clearData()
     axios({
       method: method as Method,
       url: buildQueryParams(),
@@ -97,9 +82,12 @@ const useRequest = (requestOptions: IRequestOptions) => {
       data: body,
     })
       .then((response: any) => {
-        const data = response.data
-        if (data) {
-            setData(data)
+        const dataResponse = response.data
+        if (dataResponse) {
+          if(pushValues && (data.length > 0 || dataResponse.length > 0))
+            setData([...data, ...dataResponse])
+          else if(!pushValues)
+            setData(dataResponse)
         } else setData([])
 
         setStatus(false)
@@ -136,7 +124,7 @@ const useRequest = (requestOptions: IRequestOptions) => {
     fetchRef.current()
   }, [fetchRef])
 
-  return [data, status, fetch, totalPages, clearData] as const
+  return [data, status, fetch, clearData] as const
 }
 
 export default useRequest

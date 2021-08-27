@@ -3,11 +3,9 @@ import { Search, Switch } from '../../components'
 import { FaGithubSquare } from 'react-icons/fa'
 
 export interface HeaderProps {
-    handleTheme: () => void
-    checked: boolean
 }
  
-const Header: React.FC<HeaderProps> = ({handleTheme, checked}) => (
+const Header: React.FC<HeaderProps> = () => (
      <header>
         <div className='header-logo'>
             <FaGithubSquare className='icon-logo-github' size='65px' />
@@ -16,7 +14,7 @@ const Header: React.FC<HeaderProps> = ({handleTheme, checked}) => (
             <Search placeholder='Buscar' />
         </div>
         <div className='handle-theme-btn-content'>
-           <Switch onClick={handleTheme} checked={checked} />
+           <Switch themeSwich />
         </div>
     </header> 
 )
