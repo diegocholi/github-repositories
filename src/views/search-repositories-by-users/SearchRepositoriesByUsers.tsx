@@ -1,5 +1,6 @@
 import './style.scss'
 import { useAppContext } from '../../contexts'
+import { Navigation } from '../../components'
 import { useEffect } from 'react'
 import Profile from './components/Profile'
 import RepositoryList from './components/RepositoryList'
@@ -10,7 +11,7 @@ export interface SearchRepositoriesByUsersProps {
  
 const SearchRepositoriesByUsers = () => {
     const appContext = useAppContext()
-    const [page, setPage] = useState(1)
+    const [page, setPage] = useState<Number>(1)
     const requestParams: IRequestOptions = {
         method: 'GET',
         url: `${appContext.search.searchValue}/repos`,
@@ -45,13 +46,9 @@ const SearchRepositoriesByUsers = () => {
                 avatarUrl={data.length > 0 ? data[0].owner.avatar_url : ''}
                 userGit={data.length > 0 ? data[0].owner.login : ''}
                 urlGit={data.length > 0 ? data[0].owner.html_url : ''} />
-            <RepositoryList data={data} />
-            <div></div>
-            <div>
-                <button onClick={() => setPage(page - 1)}> {'<<'} </button>
-                <button onClick={() => setPage(page + 1)}> {'>>'} </button>
-            </div>
-            {status ? <>carregando...</> : ''}
+            {status ? <>carregando...</> : <RepositoryList data={data} />}
+            <div style={{backgroundColor: '#8b8b8b'}}></div>
+            <Navigation page={page} setPage={setPage} />
         </div>
     )
 }

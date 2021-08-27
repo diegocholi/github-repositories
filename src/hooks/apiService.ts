@@ -81,7 +81,7 @@ const useRequest = (requestOptions: IRequestOptions) => {
     })
       .then((response: any) => {
         const dataResponse = response.data
-        if (dataResponse) {
+        if (dataResponse && dataResponse.length > 0) {
           if(pushValues && (data.length > 0 || dataResponse.length > 0))
             setData([...data, ...dataResponse])
           else if(!pushValues)

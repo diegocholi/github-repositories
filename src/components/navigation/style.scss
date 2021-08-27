@@ -1,0 +1,26 @@
+.navigation {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background-color: #8b8b8b;
+    height: 100%;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    button {
+        background-color: rgba(#fff, 0.9);
+        cursor: pointer;
+        padding: 0 50px;
+        margin: 0 5px;
+        border: none;
+        @media screen and (max-width: 540px) {
+            padding: 0 18px;
+        }
+
+        &:hover{
+            background-color: #292929;
+            .icon-navigation{
+                color: #fff;
+            }
+        }
+    }
+}
