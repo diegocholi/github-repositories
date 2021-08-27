@@ -1,6 +1,6 @@
-.navigation {
+.pagination {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 48.5% 1% 48.5%;
     background-color: #8b8b8b;
     height: 100%;
     align-content: center;
@@ -18,9 +18,18 @@
 
         &:hover{
             background-color: #292929;
-            .icon-navigation{
+            .icon-pagination{
                 color: #fff;
             }
         }
+    }
+
+    span {
+        display: grid;
+        justify-content: center;
+        align-self: center;
+        color: aliceblue;
+        font-size: 20px;
+        font-weight: 500;
     }
 }

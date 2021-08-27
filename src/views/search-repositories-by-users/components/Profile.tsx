@@ -17,10 +17,12 @@ const Profile: React.FC<ProfileProps> = ({
                 <img className='avatar-user' src={avatarUrl}  alt='avatar' />
             </div>
             <span className='user-login'>{userGit}</span>
-            <a className='git-hub-profile-button' href={urlGit} target='_blank' rel="noreferrer" >
-                Gitbub &nbsp;
-                <FaGithubAlt />
-            </a>
+            <div className='git-hub-profile-button-container'>
+                <a className='git-hub-profile-button' href={urlGit} target='_blank' rel="noreferrer" >
+                    Gitbub &nbsp;
+                    <FaGithubAlt />
+                </a>
+            </div>
         </div>
      );
 }

@@ -1,6 +1,6 @@
 import './style.scss'
 import { useAppContext } from '../../contexts'
-import { Navigation } from '../../components'
+import { Pagination } from '../../components'
 import { useEffect } from 'react'
 import Profile from './components/Profile'
 import RepositoryList from './components/RepositoryList'
@@ -16,7 +16,7 @@ const SearchRepositoriesByUsers = () => {
         method: 'GET',
         url: `${appContext.search.searchValue}/repos`,
         queryParams: {
-            per_page: 12,
+            per_page: 8,
             page: page
         }
     }
@@ -48,7 +48,7 @@ const SearchRepositoriesByUsers = () => {
                 urlGit={data.length > 0 ? data[0].owner.html_url : ''} />
             {status ? <>carregando...</> : <RepositoryList data={data} />}
             <div style={{backgroundColor: '#8b8b8b'}}></div>
-            <Navigation page={page} setPage={setPage} />
+            <Pagination page={page} setPage={setPage} />
         </div>
     )
 }
