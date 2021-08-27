@@ -34,7 +34,7 @@ const SearchRepositoriesByUsers = () => {
     window.onscroll = () => {
         console.log(window.scrollY, window.innerHeight, document.body.offsetHeight)
         if (window.scrollY >= document.body.offsetHeight - 200) {
-            setPage(page + 1)
+            // setPage(page + 1)
         }
     }
 
