@@ -1,11 +1,12 @@
 import './style.scss'
 import { useAppContext } from '../../contexts'
-import { Pagination } from '../../components'
+import { Pagination, Loading } from '../../components'
 import { useEffect } from 'react'
 import Profile from './components/Profile'
 import RepositoryList from './components/RepositoryList'
 import useRequest, { IRequestOptions } from '../../hooks/apiService'
 import { useState } from 'react'
+import { FaGithub } from 'react-icons/fa'
 export interface SearchRepositoriesByUsersProps {
 }
  
@@ -39,14 +40,16 @@ const SearchRepositoriesByUsers = () => {
     }
 
     if(data.length === 0)
-        return <> Nada Encontrado </>
+        return <div className='home-logo'> <FaGithub /> </div>
     return (
         <div className='container-search-repositories-by-users'>
             <Profile 
                 avatarUrl={data.length > 0 ? data[0].owner.avatar_url : ''}
                 userGit={data.length > 0 ? data[0].owner.login : ''}
                 urlGit={data.length > 0 ? data[0].owner.html_url : ''} />
-            {status ? <>carregando...</> : <RepositoryList data={data} />}
+            {status ? (
+                <Loading />
+            ) : <RepositoryList data={data} />}
             <div style={{backgroundColor: '#8b8b8b'}}></div>
             <Pagination page={page} setPage={setPage} />
         </div>

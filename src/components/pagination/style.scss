@@ -1,6 +1,6 @@
 .pagination {
     display: grid;
-    grid-template-columns: 48.5% 1% 48.5%;
+    grid-template-columns: 45% 10% 45%;
     background-color: #8b8b8b;
     height: 100%;
     align-content: center;
@@ -25,10 +25,11 @@
     }
 
     span {
+        background-color: rgba(#fff, 0.9);
         display: grid;
         justify-content: center;
         align-self: center;
-        color: aliceblue;
+        color: #292929;
         font-size: 20px;
         font-weight: 500;
     }

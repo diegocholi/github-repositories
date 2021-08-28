@@ -1,3 +1,4 @@
+import { convertDate } from '../../../utils/convertDate'
 export interface RepositoryListProps {
     data: Array<any>
 }
@@ -16,7 +17,7 @@ const RepositoryList: React.FC<RepositoryListProps> = ({data}) => {
                                 {item.name}
                             </div>
                             <div className='card-repository-date'>
-                                {item.created_at}
+                                {convertDate(new Date(item.created_at))}
                             </div>
                             <div className='card-repository-branch'>
                                 {item.default_branch}
