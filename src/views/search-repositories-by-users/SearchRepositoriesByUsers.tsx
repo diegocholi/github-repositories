@@ -4,7 +4,7 @@ import { Pagination, Loading } from '../../components'
 import { useEffect } from 'react'
 import Profile from './components/Profile'
 import RepositoryList from './components/RepositoryList'
-import useRequest, { IRequestOptions } from '../../hooks/apiService'
+import useRequest, { IRequestOptions } from '../../hooks/useRequest'
 import { useState } from 'react'
 import { FaGithub } from 'react-icons/fa'
 export interface SearchRepositoriesByUsersProps {}

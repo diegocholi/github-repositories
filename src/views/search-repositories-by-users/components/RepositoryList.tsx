@@ -1,5 +1,6 @@
 import { convertDate } from '../../../utils/convertDate'
 import { Card } from '../../../components'
+import { memo } from 'react'
 
 export interface RepositoryListProps {
   data: Array<any>
@@ -26,4 +27,4 @@ const RepositoryList: React.FC<RepositoryListProps> = ({ data }) => {
   )
 }
 
-export default RepositoryList
+export default memo(RepositoryList)
