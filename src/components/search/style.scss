@@ -1,11 +1,11 @@
 .search-container {
-    .input-search {
-        padding-right: 15px;
-        height: 40px;
-        border-radius: 20px;
-        @media screen and (max-width: 768px) {
-            font-size: 14px;
-            height: 30px;
-        }
+  .input-search {
+    padding-right: 15px;
+    height: 40px;
+    border-radius: 20px;
+    @media screen and (max-width: 768px) {
+      font-size: 14px;
+      height: 30px;
     }
+  }
 }

@@ -1,51 +1,51 @@
 $backgroundColor: #f1faee;
 $headerBackgroundColor: #000;
-$profileUserBackgroundColor: rgb(41, 41, 41);;
+$profileUserBackgroundColor: rgb(41, 41, 41);
 $colorDark: #000;
 $colorWhite: #fff;
 
 .secondary-container-theme {
+  background-color: $backgroundColor;
+  width: 100vw;
+  height: 100vh;
+
+  header {
+    background-color: $headerBackgroundColor;
+  }
+
+  .profile-user {
+    background-color: $profileUserBackgroundColor;
+    color: $colorWhite;
+  }
+
+  .repository-list {
+    color: $colorWhite;
     background-color: $backgroundColor;
-    width: 100vw;
-    height: 100vh;
+  }
 
-    header {
-        background-color: $headerBackgroundColor;
-    }
+  .icon-logo-github {
+    color: $colorWhite;
+  }
 
-    .profile-user {
-        background-color: $profileUserBackgroundColor;
-        color: $colorWhite;
-    }
-    
-    .repository-list{
-        color: $colorWhite;
-        background-color: $backgroundColor;
-    }
-    
-    .icon-logo-github {
-        color: $colorWhite;
-    }
-    
-    .card-component{
-        -webkit-box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.7); 
-        box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.7);
-    }
+  .card-component {
+    -webkit-box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.7);
+    box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.7);
+  }
 
-    .home-logo{
-        display: flex;
-        color: $colorDark;
-        justify-content: center;
-        margin-top: 100px;
-        margin: 20px 20px;
-        font-size: 400px;
-    }
+  .home-logo {
+    display: flex;
+    color: $colorDark;
+    justify-content: center;
+    margin-top: 100px;
+    margin: 20px 20px;
+    font-size: 400px;
+  }
 
-    .loading-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 150px;
-        color: $colorDark;
-    }
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 150px;
+    color: $colorDark;
+  }
 }

@@ -32,7 +32,7 @@ const useRequest = (requestOptions: IRequestOptions) => {
     successMessage = undefined,
     emptyMessage = undefined,
     events = undefined,
-    pushValues = false
+    pushValues = false,
   } = requestOptions
   const appContext = useAppContext()
   const [data, setData] = useState<any>([])
@@ -49,10 +49,10 @@ const useRequest = (requestOptions: IRequestOptions) => {
       urlBuild = urlBuild.concat('?')
       for (let key in queryParams) {
         urlBuild = urlBuild
-              .concat(key)
-              .concat('=')
-              .concat(queryParams[key])
-              .concat('&')
+          .concat(key)
+          .concat('=')
+          .concat(queryParams[key])
+          .concat('&')
       }
       urlBuild = urlBuild.substring(0, urlBuild.length - 1)
     }
@@ -84,24 +84,27 @@ const useRequest = (requestOptions: IRequestOptions) => {
       .then((response: any) => {
         const dataResponse = response.data
         if (dataResponse && dataResponse.length > 0) {
-          if(pushValues && (data.length > 0 || dataResponse.length > 0))
+          if (pushValues && (data.length > 0 || dataResponse.length > 0))
             setData([...data, ...dataResponse])
-          else if(!pushValues)
-            setData(dataResponse)
-        } else if(emptyMessage) {
+          else if (!pushValues) setData(dataResponse)
+        } else if (emptyMessage) {
           appContext.snackbar.openSnackbar('warning', emptyMessage)
-          if(queryParams.page && queryParams.page === 1)
-            setData([])
+          if (queryParams.page && queryParams.page === 1) setData([])
         }
 
         setStatus(false)
-        if (successMessage) appContext.snackbar.openSnackbar('success', successMessage)
+        if (successMessage)
+          appContext.snackbar.openSnackbar('success', successMessage)
         if (events?.onComplete) events.onComplete()
       })
       .catch((error: any) => {
-        if (error && errorMessage)  {
-          appContext.snackbar.openSnackbar('error', errorMessage + String(error))
-        } else if (errorMessage) appContext.snackbar.openSnackbar('error', errorMessage)
+        if (error && errorMessage) {
+          appContext.snackbar.openSnackbar(
+            'error',
+            errorMessage + String(error)
+          )
+        } else if (errorMessage)
+          appContext.snackbar.openSnackbar('error', errorMessage)
         setData([])
         setStatus(false)
         if (events?.onError) events.onError()
