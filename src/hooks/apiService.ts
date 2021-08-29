@@ -1,6 +1,6 @@
 import axios, { Method } from 'axios'
 import { useCallback, useRef, useState } from 'react'
-// import { useAppContext } from '../contexts'
+import { useAppContext } from '../contexts'
 const API_BASE_URL = 'https://api.github.com/users/'
 
 export interface IEventsRequest {
@@ -14,8 +14,9 @@ export interface IRequestOptions {
   headers?: object
   body?: object
   queryParams?: any
-  // errorMessage?: string
-  // successMessage?: string
+  errorMessage?: string
+  successMessage?: string
+  emptyMessage?: string
   events?: IEventsRequest
   pushValues?: boolean
 }
@@ -27,12 +28,13 @@ const useRequest = (requestOptions: IRequestOptions) => {
     body,
     headers,
     queryParams = undefined,
-    // errorMessage = undefined,
-    // successMessage = undefined,
+    errorMessage = undefined,
+    successMessage = undefined,
+    emptyMessage = undefined,
     events = undefined,
     pushValues = false
   } = requestOptions
-  // const appContext = useAppContext()
+  const appContext = useAppContext()
   const [data, setData] = useState<any>([])
   const [status, setStatus] = useState<boolean>(false)
   // const [totalPages, setTotalPages] = useState<number>(0)
@@ -86,30 +88,20 @@ const useRequest = (requestOptions: IRequestOptions) => {
             setData([...data, ...dataResponse])
           else if(!pushValues)
             setData(dataResponse)
+        } else if(emptyMessage) {
+          appContext.snackbar.openSnackbar('warning', emptyMessage)
+          if(queryParams.page && queryParams.page === 1)
+            setData([])
         }
 
         setStatus(false)
-        // if (successMessage) appContext.alertMensage(successMessage)
+        if (successMessage) appContext.snackbar.openSnackbar('success', successMessage)
         if (events?.onComplete) events.onComplete()
       })
       .catch((error: any) => {
-        if (error) {
-          if (error.response)
-            if (error.response.status) {
-              switch (error.response.status) {
-                case 409:
-                //   appContext.alertMensage(
-                //     'Conflito, valor já cadastrado',
-                //     'error'
-                //   )
-                  break
-                default:
-                  // if (errorMessage)
-                    // appContext.alertMensage(errorMessage, 'error')
-                  break
-              }
-            }
-        } // else if (errorMessage) appContext.alertMensage(errorMessage, 'error')
+        if (error && errorMessage)  {
+          appContext.snackbar.openSnackbar('error', errorMessage + String(error))
+        } else if (errorMessage) appContext.snackbar.openSnackbar('error', errorMessage)
         setData([])
         setStatus(false)
         if (events?.onError) events.onError()

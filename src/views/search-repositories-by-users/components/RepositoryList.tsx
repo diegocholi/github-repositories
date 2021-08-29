@@ -1,4 +1,6 @@
 import { convertDate } from '../../../utils/convertDate'
+import { Card } from '../../../components'
+
 export interface RepositoryListProps {
     data: Array<any>
 }
@@ -9,23 +11,22 @@ const RepositoryList: React.FC<RepositoryListProps> = ({data}) => {
             <div className='container' >
                 <div className='col-4'>
                     {data.map((item, key) => (
-                        <div 
-                            className='card-repository' 
+                        <Card 
                             key={key}
                             onClick={() => window.open(item.html_url)}>
-                            <div className='card-repository-title'>
+                            <div className='card-component-title'>
                                 {item.name}
                             </div>
-                            <div className='card-repository-date'>
+                            <div className='card-component-date'>
                                 {convertDate(new Date(item.created_at))}
                             </div>
-                            <div className='card-repository-branch'>
+                            <div className='card-component-branch'>
                                 {item.default_branch}
                             </div>
-                            <div className='card-repository-language'>
+                            <div className='card-component-language'>
                                 {item.language}
                             </div>
-                        </div>
+                        </Card>
                     ))}
                 </div>
             </div>

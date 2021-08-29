@@ -16,6 +16,7 @@ const SearchRepositoriesByUsers = () => {
     const requestParams: IRequestOptions = {
         method: 'GET',
         url: `${appContext.search.searchValue}/repos`,
+        emptyMessage: 'Nenhum registro encontrado.',
         queryParams: {
             per_page: 8,
             page: page
@@ -24,23 +25,14 @@ const SearchRepositoriesByUsers = () => {
     const [data, status, fetch] = useRequest(requestParams)
 
     useEffect(() => {
-        console.log(data)
-    }, [data])
-
-    useEffect(() => {
         if(appContext.search.searchValue)
             fetch()
     }, [appContext.search.searchValue, page, fetch])
 
-    window.onscroll = () => {
-        console.log(window.scrollY, window.innerHeight, document.body.offsetHeight)
-        if (window.scrollY >= document.body.offsetHeight) {
-            console.log('end-page')
-        }
-    }
-
     if(data.length === 0)
-        return <div className='home-logo'> <FaGithub /> </div>
+        return <div className='home-logo'> 
+                    <FaGithub /> 
+                </div>
     return (
         <div className='container-search-repositories-by-users'>
             <Profile 

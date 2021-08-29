@@ -1,0 +1,50 @@
+.snackbar-container {
+    position: fixed;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.62); 
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.62);
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 50%;
+    padding: 20px 20px;
+    margin-top: 10px;
+    z-index: 9999;
+    color: #fff;
+    border-radius: 5px;
+    
+    .snackbar-content {
+        display: grid;
+        grid-template-columns: 10% 80% 10%;
+        .icon-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .snackbar-icon {
+                font-size: 40px;
+            }
+            .snackbar-exit-icon {
+                cursor: pointer;
+                font-size: 20px;
+            }
+        }
+        
+        .snackbar-message{
+            display: flex;
+            font-weight: 800;
+            font-size: 30px;
+            justify-content: center;
+            align-items: center;
+            @media screen and (max-width: 768px) {
+                font-size: 23px;
+            }
+            @media screen and (max-width: 540px) {
+                font-size: 18px;
+            }
+            @media screen and (max-width: 425px) {
+                font-size: 15px;
+            }
+            @media screen and (max-width: 280px) {
+                font-size: 12px;
+            }
+        }
+    }
+}

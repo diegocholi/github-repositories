@@ -36,54 +36,8 @@
     }
     .repository-list {
         padding: 10px 0px;
-        .card-repository {
-            cursor: pointer;
-            background-color: #292929;
-            margin: 10px 10px;
-            padding-top: 20px;
-            padding-bottom: 50px;
-            height: 70px;
-            
-            &:hover {
-                background-color: #3b3b3b;
-            }
-            
-            .card-repository-title{
-                font-weight: 700;
-                padding: 0 8px;
-                font-size: 14px;
-                margin-bottom: 10px;
-            }
-            .card-repository-date {
-                font-size: 10px;
-                float: right;
-                margin-right: 10px;
-            }
-            .card-repository-branch {
-                font-size: 12px;
-                padding: 10px 12px;
-            }
-            .card-repository-language{
-                float: right;
-                background-color: #CEE7E6;
-                color: #000;
-                padding: 2px 2px;
-                font-weight: 600;
-                border-radius: 5px;
-                margin-right: 10px;
-            }
-        }
     }
     @media screen and (max-width: 768px) {
-        grid-template-columns: 100%;
-    }
-    @media screen and (max-width: 540px) {
-        grid-template-columns: 100%;
-    }
-    @media screen and (max-width: 414px) {
-        grid-template-columns: 100%;
-    }
-    @media screen and (max-width: 280px) {
         grid-template-columns: 100%;
     }
 }
