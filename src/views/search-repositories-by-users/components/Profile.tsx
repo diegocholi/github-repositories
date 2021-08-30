@@ -11,6 +11,7 @@ const Profile: React.FC<ProfileProps> = ({
   userGit = '',
   urlGit = '',
 }) => {
+  if (!avatarUrl || !userGit || !urlGit) return <></>
   return (
     <div className='profile-user'>
       <div className='avatar-user-content'>

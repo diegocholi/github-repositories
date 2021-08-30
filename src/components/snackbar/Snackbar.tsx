@@ -91,7 +91,7 @@ const Snackbar: ForwardRefRenderFunction<ISnackbarHandles, MessageProps> = (
     }, 5000)
   }, [])
 
-  const closedSnackbar = () => {
+  const closedSnackbar = useCallback(() => {
     setSnackbarConfig({
       isVisible: false,
       message: '',
@@ -100,7 +100,7 @@ const Snackbar: ForwardRefRenderFunction<ISnackbarHandles, MessageProps> = (
         IconSnack: undefined,
       },
     })
-  }
+  }, [])
 
   useImperativeHandle(ref, () => {
     return {

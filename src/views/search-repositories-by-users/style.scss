@@ -35,6 +35,31 @@
   }
   .repository-list {
     padding: 10px 0px;
+    .card-component-title {
+      font-weight: 700;
+      padding: 0 8px;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .card-component-date {
+      font-size: 10px;
+      float: right;
+      margin-right: 10px;
+    }
+    .card-component-branch {
+      font-size: 12px;
+      padding: 10px 12px;
+    }
+    .card-component-language {
+      float: right;
+      font-size: 10px;
+      color: #000;
+      padding: 2px 2px;
+      font-weight: 600;
+      border-radius: 5px;
+      margin-right: 10px;
+      margin-top: 20px;
+    }
   }
   @media screen and (max-width: 768px) {
     grid-template-columns: 100%;
