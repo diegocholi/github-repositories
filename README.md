@@ -1,21 +1,16 @@
 # Página para teste em cloud
 
-### `npm install`
+# Para iniciar o projeto em ambiente local:
 
-Faz o download das dependências do projeto.
+1. Setar variaveis de ambientes em .env-exemple;
+2. `npm install` -> Faz o download das dependências do projeto.
+3. `npm start` -> Inicia o projeto
 
-### `npm start`
-
-Executa o aplicativo no modo de desenvolvimento.\
+O APlicativo é executa no modo de desenvolvimento.\
 Abra [http://localhost:3000](http://localhost:3000) para visualizá-lo no navegador.
 
 A página será recarregada se você fizer edições. \
 Você também verá quaisquer erros de lint no console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 #### Caso estiver executando o container em um sistema operacional que não seja Linux, executar no bash do container:
 
