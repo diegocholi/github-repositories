@@ -1,13 +1,13 @@
 import './App.scss'
 import { AppProvider } from './contexts'
 import Theme from './theme/Theme'
+import env from 'react-dotenv'
 
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
-
 const client = new ApolloClient({
-  uri: 'https://api.github.com/graphql',
+  uri: env.API,
   headers: {
-    authorization: 'Bearer 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',
+    authorization: env.TOKEN,
   },
   cache: new InMemoryCache({
     typePolicies: {
