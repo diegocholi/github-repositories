@@ -1,5 +1,5 @@
 import { FaGithubAlt } from 'react-icons/fa'
-
+import { memo } from 'react'
 export interface ProfileProps {
   avatarUrl?: string
   userGit?: string
@@ -7,10 +7,11 @@ export interface ProfileProps {
 }
 
 const Profile: React.FC<ProfileProps> = ({
-  avatarUrl = 'https://avatars.githubusercontent.com/u/48794883?v=4',
-  userGit = 'diegocholi',
-  urlGit = 'https://github.com/diegocholi',
+  avatarUrl = '',
+  userGit = '',
+  urlGit = '',
 }) => {
+  if (!avatarUrl || !userGit || !urlGit) return <></>
   return (
     <div className='profile-user'>
       <div className='avatar-user-content'>
@@ -32,4 +33,4 @@ const Profile: React.FC<ProfileProps> = ({
   )
 }
 
-export default Profile
+export default memo(Profile)

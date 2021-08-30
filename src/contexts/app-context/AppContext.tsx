@@ -63,7 +63,6 @@ export const AppProvider: PropsWithChildren<AppProviderProps> = ({
   }
 
   const openSnackbar = useCallback((type, message) => {
-    console.log(type)
     snackbarRef.current?.openSnackbar(type, message)
   }, [])
 
