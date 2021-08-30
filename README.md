@@ -1,10 +1,10 @@
 # Github Repositories
 
-## [[--> Página para teste em cloud <--]](https://github-repositories-azmbth66e-github-repositories.vercel.app/)
+## [https://github-repositories.com](https://github-repositories-azmbth66e-github-repositories.vercel.app/)
 
 #### Para iniciar o projeto em ambiente local:
 
-1. Setar variaveis de ambientes em .env-exemple;
+1. Setar variáveis de ambientes em .env-exemple;
 2. renomear .env-exemple para .env
 3. `npm install` -> Faz o download das dependências do projeto.
 4. `npm start` -> Inicia o projeto
